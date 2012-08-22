@@ -42,7 +42,6 @@
 						height = temp;
 					}
 					var angle = feature.angle > 90 ? feature.angle - 180 : feature.angle;
-					//label.innerHTML='x: '+x0 + ", y: " + y0 + ', angle: ' + angle + '\nx: '+x1 + ", y: " + y1 +'\nw: '+width + ", h: " + height;
 
 					canvas.width = width;
 					canvas.height = height;
@@ -77,7 +76,7 @@
 					var corner = feature.corners[0];
 					mapContext.beginPath();
 					mapContext.moveTo(corner.x, corner.y);
-					for(var j = 3; j >= 0; j--) {
+					for(var j = feature.corners.length - 1; j >= 0; j--) {
 						corner = feature.corners[j];
 						mapContext.lineTo(corner.x, corner.y);
 					}
