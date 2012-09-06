@@ -180,8 +180,8 @@
 					var feature = data[i];
 					var bbox = getBoundingBox(feature, 0);
 					
-					var x = event.layerX - mapCanvas.offsetLeft;
-					var y = event.layerY - mapCanvas.offsetTop;
+					var x = event.clientX - mapCanvas.offsetLeft;
+					var y = event.clientY - mapCanvas.offsetTop;
 					
 					if(x >= bbox[0].x && x <= bbox[1].x &&
 						y >= bbox[0].y && y <= bbox[1].y){
@@ -205,7 +205,12 @@
 	}
     </script>
   </head>
-  <body>
+  <body style="padding:10px">
+    <p style="font-size:15px; padding:20px 0px;">
+      An early experiment/proof-of-concept for using the Open Source computer vision 
+      toolkit <a href="http://opencv.willowgarage.com/">OpenCV</a> to automatically pre-identify 
+      candidate place name labels on scans of old maps. 
+    </p>
     <h1>Original<h1>
     <canvas id="map"></canvas>
 
